@@ -1,0 +1,10 @@
+# JetBrains Rider
+.idea/
+*.sln.iml
+.vscode/
+*.local
+
+server/log/
+client/dist/
+node_modules/
+package-lock.json
