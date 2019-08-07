@@ -18,6 +18,7 @@ function* getOrdersSaga({ payload }) {
         yield put(getOrders.success(result));
     } catch (error) {
         yield put(getOrders.failure(error));
+        console.error(error);
     }
 }
 
@@ -31,6 +32,7 @@ function* getOrderItemsSaga({ payload }) {
         }));
     } catch (error) {
         yield put(getOrderItems.failure(error));
+        console.error(error);
     }
 }
 
