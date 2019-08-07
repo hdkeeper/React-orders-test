@@ -1,7 +1,7 @@
 import {
     GET_ORDERS, GET_ORDERS_SUCCESS, GET_ORDERS_FAILURE,
     GET_ORDER_ITEMS, GET_ORDER_ITEMS_SUCCESS, GET_ORDER_ITEMS_FAILURE
-} from '../constants';
+} from './constants';
 
 /**
  * Получить список заказов

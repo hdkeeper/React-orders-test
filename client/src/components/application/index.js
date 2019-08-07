@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import TextField from '@material-ui/core/TextField';
 
 import { getOrders } from 'actions';
 import { OrderCard } from 'components';
@@ -22,13 +23,20 @@ export default class Application extends Component {
         }
     }
 
+    onFilterChange = (event) => {
+        const { getOrders } = this.props;
+        getOrders(event.target.value);
+    }
+
     render() {
         const { orders } = this.props;
 
         return (
             <div className="application">
-                <h1>Заказы</h1>
-                
+                <div className="header">
+                    <h1>Заказы</h1>
+                    <TextField label="Фильтр" onChange={this.onFilterChange} />
+                </div>
 
                 {orders !== null &&
                     orders.map(order => <OrderCard key={order.id} {...order} />)

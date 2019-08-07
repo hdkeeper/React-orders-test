@@ -1,15 +1,15 @@
 import {
-    put, call, all, takeLatest
+    put, call, all, takeLatest, debounce
 } from 'redux-saga/effects';
 
-import { GET_ORDERS, GET_ORDER_ITEMS } from '../constants';
+import { GET_ORDERS, GET_ORDER_ITEMS } from './constants';
 
 import {
     getOrders as apiGetOrders,
     getOrderItems as apiGetOrderItems
-} from '../api';
+} from './api';
 
-import { getOrders, getOrderItems } from '../actions';
+import { getOrders, getOrderItems } from './actions';
 
 
 function* getOrdersSaga({ payload }) {
@@ -36,7 +36,7 @@ function* getOrderItemsSaga({ payload }) {
 
 export default function* rootSaga() {
     yield all([
-        yield takeLatest(GET_ORDERS, getOrdersSaga),
+        yield debounce(300, GET_ORDERS, getOrdersSaga),
         yield takeLatest(GET_ORDER_ITEMS, getOrderItemsSaga)
     ]);
 }
