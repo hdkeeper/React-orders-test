@@ -23,9 +23,10 @@ function* getOrdersSaga({ payload }) {
 
 function* getOrderItemsSaga({ payload }) {
     try {
-        const result = yield call(apiGetOrderItems, payload);
+        const orderId = payload;
+        const result = yield call(apiGetOrderItems, orderId);
         yield put(getOrderItems.success({
-            orderId: payload,
+            orderId,
             items: result
         }));
     } catch (error) {
