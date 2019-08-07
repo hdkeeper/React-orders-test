@@ -40,7 +40,7 @@ export default class OrderCard extends Component {
                         {items ?
                             items.map(item => (
                                 <ListItem key={item.id}>
-                                    {item.name}, {item.qty} x {item.price} = {item.sum}
+                                    {item.name}, {item.qty} × {item.price} = {item.sum}
                                 </ListItem>
                             ))
                             :
