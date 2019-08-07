@@ -1,12 +1,9 @@
-/* global fetch, Promise */
-
 /**
  * GET-запрос для JSON-данных
  * @param {string} url
  * @returns Promise -> any
  */
-const get = (url) => {
-    return fetch(url)
+const get = url => fetch(url)
     .then((result) => {
         if (!result.ok) {
             return Promise.reject(result);
@@ -14,7 +11,7 @@ const get = (url) => {
         return result.json();
     })
     .catch(error => Promise.reject(error));
-};
+
 
 /**
  * Получить список заказов

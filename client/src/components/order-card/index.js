@@ -27,7 +27,9 @@ export default class OrderCard extends Component {
     }
 
     render() {
-        const { docNum, docDate, description, items } = this.props;
+        const {
+            docNum, docDate, description, items
+        } = this.props;
 
         return (
             <ExpansionPanel onChange={this.onToggle}>
@@ -37,14 +39,13 @@ export default class OrderCard extends Component {
 
                 <ExpansionPanelDetails>
                     <List dense>
-                        {items ?
-                            items.map(item => (
+                        {items
+                            ? items.map(item => (
                                 <ListItem key={item.id}>
                                     {item.name}, {item.qty} × {item.price} = {item.sum}
                                 </ListItem>
                             ))
-                            :
-                            <CircularProgress />
+                            : <CircularProgress />
                         }
                     </List>
                 </ExpansionPanelDetails>

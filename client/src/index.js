@@ -9,9 +9,6 @@ import store from './store';
 import { Application } from './components';
 
 
-// import './style/common.less';
-
-
 render(
     <Provider store={store}>
         <CssBaseline />

@@ -14,7 +14,7 @@ export const getOrders = filter => ({
 
 /**
  * Получить позиции заказа
- * @param {int} orderId 
+ * @param {int} orderId
  */
 export const getOrderItems = orderId => ({
     type: GET_ORDER_ITEMS,
@@ -23,7 +23,7 @@ export const getOrderItems = orderId => ({
 
 /**
  * Добавить дополнительные действия
- * @param {function} action 
+ * @param {function} action
  * @param {object} what - { action: 'ACTION_CONST' }
  */
 const addActions = (action, what) => {

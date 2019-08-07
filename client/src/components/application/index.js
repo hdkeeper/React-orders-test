@@ -39,9 +39,9 @@ export default class Application extends Component {
                 </div>
 
                 {orders !== null && (
-                    orders.length ?
-                        orders.map(order => <OrderCard key={order.id} {...order} />) :
-                        <h2>Таких заказов нет</h2>
+                    orders.length
+                        ? orders.map(order => <OrderCard key={order.id} {...order} />)
+                        : (<h2>Таких заказов нет</h2>)
                 )}
             </div>
         );

@@ -10,7 +10,7 @@ module.exports = (env, options) => {
     const isDev = options.mode === 'development';
     return {
         resolve: {
-            modules: [path.resolve(__dirname, './src'), 'node_modules'],
+            modules: [path.resolve(__dirname, 'src'), 'node_modules'],
         },
         devtool: isDev ? 'source-map' : 'eval-source-map',
         output: {
