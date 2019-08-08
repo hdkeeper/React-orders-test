@@ -11,6 +11,19 @@ import CircularProgress from '@material-ui/core/CircularProgress';
 import { getOrderItems } from 'actions';
 
 
+const OrderItem = (props) => {
+    const {
+        name, qty, price, sum
+    } = props;
+    
+    return (
+        <ListItem>
+            {name}, {qty} × {price} = {sum}
+        </ListItem>
+    );
+};
+
+
 const mstp = (state, props) => ({
     items: state.orderItems[props.id]
 });
@@ -40,11 +53,7 @@ export default class OrderCard extends Component {
                 <ExpansionPanelDetails>
                     <List dense>
                         {items
-                            ? items.map(item => (
-                                <ListItem key={item.id}>
-                                    {item.name}, {item.qty} × {item.price} = {item.sum}
-                                </ListItem>
-                            ))
+                            ? items.map(item => <OrderItem key={item.id} {...item} />)
                             : <CircularProgress />
                         }
                     </List>
